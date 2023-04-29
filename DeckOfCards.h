@@ -1,6 +1,7 @@
 
 #include <array>
 #include <string>
+#include "Card.h"
 
 #pragma once
 
@@ -9,12 +10,17 @@ class DeckOfCards {
         DeckOfCards();
 
         // Accessor Functions
-        std::array<std::string, 52> getDeck() const;
+        std::array<Card, 52> getDeck() const;
 
-        // Mutator Functions
-        void setDeck(std::array<std::string, 52>&);
+        // Functionality
+        void shuffle();
+        Card dealCard();
+        bool moreCards() const;
 
-    
+        Suit getSuit(int) const;
+        Face getFace(int) const;
+
     private:
-        std::array<std::string, 52> deck;
+        std::array<Card, 52> deck;
+        int currentCard;
 };
