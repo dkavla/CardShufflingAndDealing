@@ -4,4 +4,4 @@ project(CardShufflingDealing)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(CardShuffleDeal main.cpp Card.cpp DeckOfCards.cpp)
+add_executable(CardShuffleDeal main.cpp Card.cpp DeckOfCards.cpp PokerHand.cpp)
