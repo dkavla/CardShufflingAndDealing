@@ -4,8 +4,9 @@
 #include "Card.h"
 #include "PokerHand.h"
 
+
 bool isPair(const std::array<Card, 5>& hand) {
-    std::array<int, 13> cardCounter{};
+    std::array<int, 13> cardCounter = {};
 
     for (Card card : hand) {
         cardCounter[static_cast<int>(card.getCardFace())]++;
@@ -22,7 +23,7 @@ bool isPair(const std::array<Card, 5>& hand) {
 }
 
 bool isTwoPairs(const std::array<Card, 5>& hand) {
-    std::array<int, 13> cardCounter{};
+    std::array<int, 13> cardCounter = {};
 
     for (Card card : hand) {
         cardCounter[static_cast<int>(card.getCardFace())]++;
@@ -39,24 +40,24 @@ bool isTwoPairs(const std::array<Card, 5>& hand) {
 }
 
 bool isThreeOfAKind(const std::array<Card, 5>& hand) {
-    std::array<int, 14> cardCounter{};
+    std::array<int, 13> cardCounter = {};
 
     for (Card card : hand) {
         cardCounter[static_cast<int>(card.getCardFace())]++;
     }
 
-    int threePairCounter = 0;
+    int threeKindCounter = 0;
     for (int x : cardCounter) {
-        if (x == 2) {
-            threePairCounter++;
+        if (x == 3) {
+            threeKindCounter++;
         }
     }
 
-    return threePairCounter == 3;
+    return threeKindCounter == 1;
 }
 
 bool isFourOfAKind(const std::array<Card, 5>& hand) {
-    std::array<int, 13> cardCounter{};
+    std::array<int, 13> cardCounter = {};
 
     for (Card card : hand) {
         cardCounter[static_cast<int>(card.getCardFace())]++;
@@ -73,7 +74,7 @@ bool isFourOfAKind(const std::array<Card, 5>& hand) {
 }
 
 bool isFlushHand(const std::array<Card, 5>& hand) {
-    std::array<int, 4> suitCounter{};
+    std::array<int, 4> suitCounter = {};
 
     for (Card card : hand) {
         suitCounter[static_cast<int>(card.getCardSuit())]++;
